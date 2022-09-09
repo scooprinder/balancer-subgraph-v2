@@ -203,6 +203,16 @@ let balBptAddressByNetwork: AddressByNetwork = {
   dev: '0x0000000000000000000000000000000000000000',
 };
 
+let fraxAddressByNetwork: AddressByNetwork = {
+  mainnet: '0x853d955acef822db058eb8505911ed77f175b99e',
+  kovan: '0x61d5dc44849c9c87b0856a2a311536205c96c7fd',
+  goerli: '0xf8a0623ab66f985effc1c69d05f1af4badb01b00',
+  rinkeby: '0x0000000000000000000000000000000000000000',
+  polygon: '0x3d468AB2329F296e1b9d8476Bb54Dd77D8c2320f',
+  arbitrum: '0x0000000000000000000000000000000000000000',
+  dev: '0x0000000000000000000000000000000000000000',
+}
+
 function forNetwork(addressByNetwork: AddressByNetwork, network: string): Address {
   if (network == 'mainnet') {
     return Address.fromString(addressByNetwork.mainnet);
@@ -233,6 +243,7 @@ export let BAL: Address = forNetwork(balAddressByNetwork, network);
 export let DAI: Address = forNetwork(daiAddressByNetwork, network);
 export let MKR: Address = forNetwork(mkrAddressByNetwork, network);
 export let GNO: Address = forNetwork(gnoAddressByNetwork, network);
+export let FRAX: Address = forNetwork(fraxAddressByNetwork, network);
 
 let ALT_DAI = forNetwork(altDaiAddressByNetwork, network);
 let ALT_USDC = forNetwork(altUsdcAddressByNetwork, network);
@@ -252,6 +263,7 @@ export let PRICING_ASSETS: Address[] = [
   BAL,
   MKR,
   GNO,
+  FRAX,
   BAL_BPT,
   ALT_DAI,
   ALT_USDC,
@@ -260,4 +272,4 @@ export let PRICING_ASSETS: Address[] = [
   LINEAR_USDC,
   LINEAR_USDT,
 ];
-export let USD_STABLE_ASSETS: Address[] = [USDC, DAI, USDT, ALT_DAI, ALT_USDC, ALT_USDT];
+export let USD_STABLE_ASSETS: Address[] = [USDC, DAI, USDT, FRAX, ALT_DAI, ALT_USDC, ALT_USDT];
